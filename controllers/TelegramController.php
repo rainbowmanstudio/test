@@ -40,4 +40,17 @@ class TelegramController extends Controller
         }
         $chat->handle();
     }
+	public function actionIndexthree()
+    {
+        $raw = Yii::$app->request->getRawBody();
+        $result = json_decode($raw);
+        $chat = new TelegramMessage();
+        $chat->fillData($result);
+        try {
+            $chat->save();
+        } catch (IntegrityException $e) {
+            return;
+        }
+        $chat->handle();
+    }
 }
