@@ -12,7 +12,7 @@ use yii\web\NotFoundHttpException;
 use yii\web\Response;
 use yii\filters\VerbFilter;
 
-class ProjectsController extends Controller
+
 {
     /**
      * @inheritdoc
